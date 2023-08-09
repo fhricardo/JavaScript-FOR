@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comando FOR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ececec;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin: 10px;
+            cursor: pointer;
+            background-color: #fafafa;
+            padding: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="listaCores"></ul>
+
+    <script>
+        const cores = ["red", "blue", "green", "yellow", "purple"];
+        const listaCores = document.getElementById("listaCores");
+
+        for (let i = 0; i < cores.length; i++) {
+            const item = document.createElement("li");
+            item.textContent = cores[i];
+            item.style.color = cores[i];
+
+            item.addEventListener("click", function () {
+                document.body.style.backgroundColor = cores[i];
+            });
+
+            listaCores.appendChild(item);
+        }
+    </script>
+
+</body>
+
+</html>
